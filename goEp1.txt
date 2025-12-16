@@ -1,3 +1,6 @@
 Go module คือ Collection ของ package ที่เกี่ยวข้องที่เราจะใช้งานร่วมกับ Project
 
-    
+โดยการจัดการ module นั้น จะมี 2 flie ที่เป็น flie หลักคือ
+
+    1. go.mod list dependency ทั้งหมดของ go ไว้
+    2. go.sum คือไฟล์ที่เก็บเวอร์ชั่นลอเอาไว้(ใช้เช็คว่าเรา Load มาถูก version )
