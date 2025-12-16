@@ -4,10 +4,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/google/uuid v1.6.0"
+	"github.com/google/uuid"
 	)
 
 
 func main(){
-	fmt.Print("Hello World")
+	id := uuid.New()
+	fmt.Println("Hello World")
+	fmt.Printf("UUID: %s", id)
 }
