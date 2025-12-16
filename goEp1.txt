@@ -16,4 +16,12 @@ Go module คือ Collection ของ package ที่เกี่ยวข�
         go get (repository)
         => go get github.com/google/uuid
 
+ภาษา Go ต้องมี func ที่มีชื่อเดียวกับ package เช่น package main
+
+
+
+หากเปลี่ยนเป็น private func ทำได้โดยกำหนดตัวอักษรตัวแรกของฟังชันเป็นตัวพิมเล็ก 
+
+
+ถ้าตัวอักษรจตัวใหญ่ จะเป็น plublic
     
