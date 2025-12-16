@@ -1,0 +1,3 @@
+Go module คือ Collection ของ package ที่เกี่ยวข้องที่เราจะใช้งานร่วมกับ Project
+
+    
