@@ -5,11 +5,19 @@ package main
 import (
 	"fmt"
 	"github.com/google/uuid"
+
+	// import package niran
+	"github.com/niran/go-example/niran"
+
+
 	)
 
 
 func main(){
 	id := uuid.New()
 	fmt.Println("Hello World")
-	fmt.Printf("UUID: %s", id)
+	fmt.Printf("UUID: %s\n", id)
+
+	// How to use package niran 
+	niran.SayHelloNiran()
 }
