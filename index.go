@@ -5,7 +5,6 @@ package main
 import (
 	"fmt"
 	"github.com/google/uuid"
-
 	// import package niran
 	"github.com/niran/go-example/niran"
 
