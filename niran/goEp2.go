@@ -36,5 +36,9 @@ func PointerTest() {
 }
 
 func ControlStructureTest() {
+	// if else
+	//switch case
+	// loop for
 
+	
 }
