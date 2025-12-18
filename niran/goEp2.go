@@ -116,3 +116,12 @@ func LoopTest() {
 
 
 }
+
+
+func DataStructureTest() {
+	// array  var a [5]int
+	// slice var a[]int
+	// map 
+	// struct
+
+}
