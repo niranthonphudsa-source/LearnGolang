@@ -17,8 +17,11 @@ func main() {
 	fmt.Printf("UUID: %s\n", id)
 
 	// How to use package niran
-	niran.SayHelloNiran()
-	niran.VariableTest()
-	niran.PointerTest()
+	// niran.SayHelloNiran()
+	// niran.VariableTest()
+	// niran.PointerTest()
+	niran.ControlStructureTest()
+	niran.LoopTest()
+	
 
 }
