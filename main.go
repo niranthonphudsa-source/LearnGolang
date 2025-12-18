@@ -19,5 +19,6 @@ func main() {
 	// How to use package niran
 	niran.SayHelloNiran()
 	niran.VariableTest()
+	niran.PointerTest()
 
 }
