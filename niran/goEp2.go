@@ -9,6 +9,7 @@ package niran
 
 import (
 	"fmt"
+	
 )
 
 func VariableTest() {
@@ -31,7 +32,7 @@ func PointerTest() {
 	const PI float32 = 3.14
 
 	Total := float32(a*b) * PI
-	fmt.Printf("Total : %.02f", Total)
+	fmt.Printf("Total : %.02f\n", Total)
 
 }
 
@@ -85,12 +86,33 @@ func ControlStructureTest() {
 	default:
 		fmt.Println("Invalid Month")
 	}
-	fmt.Printf("Grade: %s\n", grade)
 
 }
 
 func LoopTest() {
+	// nomal for loop
 	for i := 1; i <= 3; i++ {
 		fmt.Println(i)
 	}
+
+	// do while loop
+
+	j := 1
+	for {
+		fmt.Println(j)
+		j++
+		if j >= 10 {
+			break
+		}
+	}
+
+
+	// while loop
+	k := 1
+	for k < 5{
+		fmt.Println(k)
+		k++
+	}
+
+
 }
