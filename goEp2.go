@@ -6,3 +6,24 @@
 // 6. Error Hamding (Throw error)
 
 package main
+
+import (
+	"fmt"
+)
+	
+
+
+// camelCase => firstName
+// snake_case => first_name
+// How to Variable
+//1. var <ชื่อตัวแปร> <ชนิดตัวแปร> 
+//2. var firstName string = <ค่าเริ่มต้น>
+//3. var <ชื่อตัวแปร> = <ค่าเริ่มต้น>
+//4. <ชื่อตัวแปร> := <ต่าเริ่มต้น>
+
+func main(){
+	fristName := "Niran"
+	fmt.Print("Frist: %s, firstName)
+
+}
+
