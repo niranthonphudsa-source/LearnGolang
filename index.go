@@ -7,6 +7,7 @@ import (
 	"github.com/google/uuid"
 	// import package niran
 	"github.com/niran/go-example/niran"
+	
 
 
 	)
@@ -19,4 +20,9 @@ func main(){
 
 	// How to use package niran 
 	niran.SayHelloNiran()
+	niran.GoEp2()
+
+
 }
+
+
