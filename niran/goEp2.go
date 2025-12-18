@@ -42,11 +42,11 @@ func ControlStructureTest() {
 
 	var grade string
 	var score int = 80
-	if score >= 80{
+	if score >= 80 {
 		grade = "A"
 	} else if score >= 70 {
 		grade = "B"
-	} else if score >= 60{
+	} else if score >= 60 {
 		grade = "C"
 	} else if score >= 50 {
 		grade = "D"
@@ -61,13 +61,13 @@ func ControlStructureTest() {
 	case 1:
 		fmt.Println("January")
 	case 2:
-		fmt.Println("February")	
+		fmt.Println("February")
 	case 3:
 		fmt.Println("March")
 	case 4:
-		fmt.Println("April")	
+		fmt.Println("April")
 	case 5:
-		fmt.Println("May")	
+		fmt.Println("May")
 	case 6:
 		fmt.Println("June")
 	case 7:
@@ -87,8 +87,10 @@ func ControlStructureTest() {
 	}
 	fmt.Printf("Grade: %s\n", grade)
 
+}
+
+func LoopTest() {
 	for i := 1; i <= 3; i++ {
 		fmt.Println(i)
 	}
-
 }
