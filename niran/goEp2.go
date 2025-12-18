@@ -87,4 +87,8 @@ func ControlStructureTest() {
 	}
 	fmt.Printf("Grade: %s\n", grade)
 
+	for i := 1; i <= 3; i++ {
+		fmt.Println(i)
+	}
+
 }
