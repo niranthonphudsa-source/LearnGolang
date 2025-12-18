@@ -56,12 +56,34 @@ func ControlStructureTest() {
 
 	fmt.Printf("Grade: %s\n", grade)
 
-	switch score {
-	case 80: grade = "A"
-	case 70: grade = "B"
-	case 60: grade = "C"
-	case 50: grade = "D"
-	default: grade = "F"	
+	var Month int = 4
+	switch Month {
+	case 1:
+		fmt.Println("January")
+	case 2:
+		fmt.Println("February")	
+	case 3:
+		fmt.Println("March")
+	case 4:
+		fmt.Println("April")	
+	case 5:
+		fmt.Println("May")	
+	case 6:
+		fmt.Println("June")
+	case 7:
+		fmt.Println("July")
+	case 8:
+		fmt.Println("August")
+	case 9:
+		fmt.Println("September")
+	case 10:
+		fmt.Println("October")
+	case 11:
+		fmt.Println("November")
+	case 12:
+		fmt.Println("December")
+	default:
+		fmt.Println("Invalid Month")
 	}
 	fmt.Printf("Grade: %s\n", grade)
 
