@@ -11,17 +11,22 @@ import (
 	"fmt"
 )
 
-// camelCase => firstName
-// snake_case => first_name
-// How to Variable
-//1. var <ชื่อตัวแปร> <ชนิดตัวแปร>
-//2. var firstName string = <ค่าเริ่มต้น>
-//3. var <ชื่อตัวแปร> = <ค่าเริ่มต้น>
-//4. <ชื่อตัวแปร> := <ต่าเริ่มต้น>
-
-func GoEp2() {
+func VariableTest() {
+	// camelCase => firstName
+	// snake_case => first_name
+	// How to Variable
+	//1. var <ชื่อตัวแปร> <ชนิดตัวแปร>
+	//2. var <ชื่อตัวแปร> <ชนิดตัวแปร> = <ค่าเริ่มต้น>
+	//3. var <ชื่อตัวแปร> = <ค่าเริ่มต้น>
+	//4. <ชื่อตัวแปร> := <ต่าเริ่มต้น>
 
 	firstName := "Niran"
 	fmt.Printf("First Name: %s", firstName)
 
+}
+
+func PointerTest(){
+	var a int = 20
+	var b  int = 30
+	fmt.Printf("Total : %d", a+b)
 }
