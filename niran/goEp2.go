@@ -21,12 +21,16 @@ func VariableTest() {
 	//4. <ชื่อตัวแปร> := <ต่าเริ่มต้น>
 
 	firstName := "Niran"
-	fmt.Printf("First Name: %s", firstName)
+	fmt.Printf("First Name: %s\n", firstName)
 
 }
 
-func PointerTest(){
+func PointerTest() {
 	var a int = 20
-	var b  int = 30
-	fmt.Printf("Total : %d", a+b)
+	var b int = 30
+	const PI float32 = 3.14
+
+	Total := float32(a*b) * PI
+	fmt.Printf("Total : %.02f", Total)
+
 }
