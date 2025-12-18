@@ -34,3 +34,7 @@ func PointerTest() {
 	fmt.Printf("Total : %.02f", Total)
 
 }
+
+func ControlStructureTest() {
+
+}
