@@ -23,17 +23,11 @@ func main() {
 	// niran.ControlStructureTest()
 	// niran.LoopTest()
 
-	niran.DataStructureTest()
+	// niran.DataStructureTest()
 	
+	// niran.TestStruct()
+
+	niran.TestStructinStruct()
 
 }
 
-func DataStructureTest() {
-	// array
-	// slice
-	// map 
-	// struct
-
-	
-
-}
