@@ -25,3 +25,13 @@ func main() {
 	
 
 }
+
+func DataStructureTest() {
+	// array
+	// slice
+	// map 
+	// struct
+
+	
+
+}
