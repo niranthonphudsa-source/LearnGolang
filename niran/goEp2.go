@@ -205,84 +205,97 @@ func DataStructureTest() {
 }
 
 // Struct
-type Person struct {
-	Name string
-	Age int 
-	Weight float32
-	Height float32
-	Address Address
-}
+// type Person struct {
+// 	Name string
+// 	Age int 
+// 	Weight float32
+// 	Height float32
+// 	Address Address
+// }
 
-func TestStruct(){
+// func TestStruct(){
 
-	var Person1 Person
-	Person1.Name = "Niran"
-	Person1.Age = 22
-	Person1.Weight = 70.5
-	Person1.Height = 175.5
-	fmt.Printf("Data is Person1: %+v\n", Person1)
+// 	var Person1 Person
+// 	Person1.Name = "Niran"
+// 	Person1.Age = 22
+// 	Person1.Weight = 70.5
+// 	Person1.Height = 175.5
+// 	fmt.Printf("Data is Person1: %+v\n", Person1)
 
-	var person  []Person
-	person = append(person, Person{
-		Name: "Niran", 
-		Age: 22, 
-		Weight: 70.5,
-		Height: 175.5,
-	})
-	person = append(person, Person{
-		Name: "Natthakan", 
-		Age: 23, 
-		Weight: 71.5, 
-		Height: 115.5,
-	})
-
-
-	fmt.Printf("Data is Person: %+v\n", person)
-	fmt.Printf("Name: %s\n", person[0].Name)
+// 	var person  []Person
+// 	person = append(person, Person{
+// 		Name: "Niran", 
+// 		Age: 22, 
+// 		Weight: 70.5,
+// 		Height: 175.5,
+// 	})
+// 	person = append(person, Person{
+// 		Name: "Natthakan", 
+// 		Age: 23, 
+// 		Weight: 71.5, 
+// 		Height: 115.5,
+// 	})
 
 
-	for i := 0; i < len(person); i++ {
-		fmt.Printf("Person: %+v\n", person[i])
-	}
-
-	for j := 0; j < len(person); j++{
-		fmt.Println("Name: ", person[j].Name)
-		fmt.Println("Age: ", person[j].Age)
-		fmt.Println("Weight: ", person[j].Weight)
-		fmt.Println("Height: ", person[j].Height)
-	}
+// 	fmt.Printf("Data is Person: %+v\n", person)
+// 	fmt.Printf("Name: %s\n", person[0].Name)
 
 
-}
+// 	for i := 0; i < len(person); i++ {
+// 		fmt.Printf("Person: %+v\n", person[i])
+// 	}
+
+// 	for j := 0; j < len(person); j++{
+// 		fmt.Println("Name: ", person[j].Name)
+// 		fmt.Println("Age: ", person[j].Age)
+// 		fmt.Println("Weight: ", person[j].Weight)
+// 		fmt.Println("Height: ", person[j].Height)
+// 	}
+
+
+// }
 
 
 // Struct in Struct
-type Address struct {
-	street string
-	city string
-	country string
-}
-func TestStructinStruct(){
-	var person  []Person
-	person = append(person, Person{
-		Name: "Niran", 
-		Age: 22, 
-		Weight: 70.5,
-		Height: 175.5,
-		Address: Address{
-			street: "333 Mian St",
-			city: "Bankok",
-			country: "Thailand",
-		},
-	})
+// type Address struct {
+// 	street string
+// 	city string
+// 	country string
+// }
+// func TestStructinStruct(){
+// 	var person  []Person
+// 	person = append(person, Person{
+// 		Name: "Niran", 
+// 		Age: 22, 
+// 		Weight: 70.5,
+// 		Height: 175.5,
+// 		Address: Address{
+// 			street: "333 Mian St",
+// 			city: "Bankok",
+// 			country: "Thailand",
+// 		},
+// 	})
 
-	for j := 0; j < len(person); j++{
-		fmt.Println("Name: ", person[j].Name)
-		fmt.Println("Age: ", person[j].Age)
-		fmt.Println("Weight: ", person[j].Weight)
-		fmt.Println("Height: ", person[j].Height)
-		fmt.Println("Address: ", person[j].Address.street, 
-						person[j].Address.city, 
-						person[j].Address.country)
+// 	for j := 0; j < len(person); j++{
+// 		fmt.Println("Name: ", person[j].Name)
+// 		fmt.Println("Age: ", person[j].Age)
+// 		fmt.Println("Weight: ", person[j].Weight)
+// 		fmt.Println("Height: ", person[j].Height)
+// 		fmt.Println("Address: ", person[j].Address.street, 
+// 						person[j].Address.city, 
+// 						person[j].Address.country)
+// 	}
+// }
+
+
+func MyMessage(name string, num int) {
+	fmt.Println("I just executed!")
+	for i := 0; i <= num; i++{
+		fmt.Printf("My name is %s\n", name)
 	}
+
+}
+
+func Add(a int, b int) int {
+	return a + b
 }

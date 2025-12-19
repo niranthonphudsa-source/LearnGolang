@@ -27,7 +27,11 @@ func main() {
 	
 	// niran.TestStruct()
 
-	niran.TestStructinStruct()
+	// niran.TestStructinStruct()
+
+	niran.MyMessage("Niran", 4)
+	Total := niran.Add(10, 50)
+	fmt.Println("Total:", Total)
 
 }
 
