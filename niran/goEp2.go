@@ -140,8 +140,25 @@ func DataStructureTest() {
 	for num := 0; num < len(mySlice); num++{
 		fmt.Printf("Name: %s\n", mySlice[num])
 	}
-	fmt.Print("Success !")
+	fmt.Println(len(mySlice))
+	fmt.Println(cap(mySlice))
 
+	fmt.Print("Success !\n")
+	subSlice := mySlice[0:2]
+	fmt.Println(subSlice)
+	fmt.Println(len(subSlice))
+	fmt.Println(cap(subSlice))
+
+	mySlice = append(mySlice, "Natthakan")
+	fmt.Println(mySlice)
+
+	//Convert Array to Slice 
+	myArray := [4]string{"niran", "kritthapas", "sirawit", "Natthakan"}
+
+	arrToSlice := myArray[:]
+	
+	arrToSlice = append(arrToSlice, "Teekhayu")
+	fmt.Println(arrToSlice)
 
 	// type Person struct {
 	// 	Name string
