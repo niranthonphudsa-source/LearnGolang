@@ -135,30 +135,63 @@ func DataStructureTest() {
 	// }
 	// fmt.Println(MyArray[0])
 
-	var mySlice []string = []string{"niran", "kritthapas", "sirawit"}
+	// var mySlice []string = []string{"niran", "kritthapas", "sirawit"}
 
-	for num := 0; num < len(mySlice); num++{
-		fmt.Printf("Name: %s\n", mySlice[num])
-	}
-	fmt.Println(len(mySlice))
-	fmt.Println(cap(mySlice))
+	// for num := 0; num < len(mySlice); num++{
+	// 	fmt.Printf("Name: %s\n", mySlice[num])
+	// }
+	// fmt.Println(len(mySlice))
+	// fmt.Println(cap(mySlice))
 
-	fmt.Print("Success !\n")
-	subSlice := mySlice[0:2]
-	fmt.Println(subSlice)
-	fmt.Println(len(subSlice))
-	fmt.Println(cap(subSlice))
+	// fmt.Print("Success !\n")
+	// subSlice := mySlice[0:2]
+	// fmt.Println(subSlice)
+	// fmt.Println(len(subSlice))
+	// fmt.Println(cap(subSlice))
 
-	mySlice = append(mySlice, "Natthakan")
-	fmt.Println(mySlice)
+	// mySlice = append(mySlice, "Natthakan")
+	// fmt.Println(mySlice)
 
-	//Convert Array to Slice 
-	myArray := [4]string{"niran", "kritthapas", "sirawit", "Natthakan"}
+	// //Convert Array to Slice 
+	// myArray := [4]string{"niran", "kritthapas", "sirawit", "Natthakan"}
 
-	arrToSlice := myArray[:]
+	// arrToSlice := myArray[:]
 	
-	arrToSlice = append(arrToSlice, "Teekhayu")
-	fmt.Println(arrToSlice)
+	// arrToSlice = append(arrToSlice, "Teekhayu")
+	// fmt.Println(arrToSlice)
+
+
+
+	// Map
+	// 1 key have 1 value
+	// <name> := make(map[type key]type value)
+	myMap := make(map[string]int)
+	myMap["Niran"] = 22
+	myMap["Natthakan"] = 23
+	myMap["Krittapas"] = 23
+
+	fmt.Println(myMap)
+	fmt.Println("Niran age", myMap["Niran"])
+	fmt.Println("Natthakan age", myMap["Natthakan"])
+
+
+	// delete
+	delete(myMap, "Krittapas")
+	for key, value :=  range myMap {
+		fmt.Printf("Name: %s Age: %d\n", key, value)
+	}
+
+	// check if key exit
+	val, ok := myMap["Krittapas"]
+	if ok {
+		fmt.Println("Pear value:", val)
+	} else {
+		fmt.Println("Not Found")
+	}
+
+	
+
+
 
 	// type Person struct {
 	// 	Name string
