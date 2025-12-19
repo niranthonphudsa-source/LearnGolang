@@ -124,4 +124,21 @@ func DataStructureTest() {
 	// map 
 	// struct
 
+	//Array and Slice
+
+	var MyArray [5]int = [5]int{10, 20, 30, 40, 50}
+	fmt.Println(MyArray)
+
+	// type Person struct {
+	// 	Name string
+	// 	Age int 
+	// }
+
+
+	// type Dog interface {
+	// 	Bark() string
+	// }
+
+	// Pointer
+	// var a *int
 }

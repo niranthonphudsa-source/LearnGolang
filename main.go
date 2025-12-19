@@ -20,8 +20,10 @@ func main() {
 	// niran.SayHelloNiran()
 	// niran.VariableTest()
 	// niran.PointerTest()
-	niran.ControlStructureTest()
-	niran.LoopTest()
+	// niran.ControlStructureTest()
+	// niran.LoopTest()
+
+	niran.DataStructureTest()
 	
 
 }
