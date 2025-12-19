@@ -126,8 +126,22 @@ func DataStructureTest() {
 
 	//Array and Slice
 
-	var MyArray [5]int = [5]int{10, 20, 30, 40, 50}
-	fmt.Println(MyArray)
+	// var MyArray [5]int = [5]int{10, 20, 30, 40, 50}
+	// fmt.Println(MyArray)
+
+	// for i := 0; i < len(MyArray); i++ {
+	// 	fmt.Printf("Number %d: %d\n", i, MyArray[i])
+	// 	MyArray[0] = 100
+	// }
+	// fmt.Println(MyArray[0])
+
+	var mySlice []string = []string{"niran", "kritthapas", "sirawit"}
+
+	for num := 0; num < len(mySlice); num++{
+		fmt.Printf("Name: %s\n", mySlice[num])
+	}
+	fmt.Print("Success !")
+
 
 	// type Person struct {
 	// 	Name string
