@@ -29,9 +29,20 @@ func main() {
 
 	// niran.TestStructinStruct()
 
-	niran.MyMessage("Niran", 4)
-	Total := niran.Add(10, 50)
-	fmt.Println("Total:", Total)
+	// niran.MyMessage("Niran", 4)
+	// Total := niran.Add(10, 50)
+	// fmt.Println("Total:", Total)
+
+
+	// This is call Method
+	// student := niran.Student {
+	// 	FirstName: "Niran",
+	// 	LastName: "Thonphudsa",
+	// }
+
+	// fullName := student.FulllName()
+	// fmt.Println("Full Name Student is", fullName)
+
 
 }
 

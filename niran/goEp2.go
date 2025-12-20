@@ -288,14 +288,31 @@ func DataStructureTest() {
 // }
 
 
-func MyMessage(name string, num int) {
-	fmt.Println("I just executed!")
-	for i := 0; i <= num; i++{
-		fmt.Printf("My name is %s\n", name)
-	}
+// func MyMessage(name string, num int) {
+// 	fmt.Println("I just executed!")
+// 	for i := 0; i <= num; i++{
+// 		fmt.Printf("My name is %s\n", name)
+// 	}
 
+// }
+
+// func Add(a int, b int) int {
+// 	return a + b
+// }
+
+
+//method
+/* Defind the student struct*/
+type Student struct {
+	FirstName string
+	LastName string
+	
 }
 
-func Add(a int, b int) int {
-	return a + b
-}
+// Method with a receiver of type Student
+// This method returns the full name of student
+
+// func (s Student) FulllName() string{
+// 	return s.FirstName + s.LastName
+	
+// }
