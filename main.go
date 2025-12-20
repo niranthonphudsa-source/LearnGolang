@@ -44,5 +44,12 @@ func main() {
 	// fmt.Println("Full Name Student is", fullName)
 
 
+	//interface
+	dog := niran.Dog{Name: "Buddy"}
+	perSon := niran.Person{Name: "Natthakan"}
+
+	niran.MakeSound(dog)
+	niran.MakeSound(perSon)
+	
 }
 

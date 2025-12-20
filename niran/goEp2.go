@@ -9,7 +9,6 @@ package niran
 
 import (
 	"fmt"
-	
 )
 
 func VariableTest() {
@@ -303,11 +302,11 @@ func DataStructureTest() {
 
 //method
 /* Defind the student struct*/
-type Student struct {
-	FirstName string
-	LastName string
+// type Student struct {
+// 	FirstName string
+// 	LastName string
 	
-}
+// }
 
 // Method with a receiver of type Student
 // This method returns the full name of student
@@ -316,3 +315,31 @@ type Student struct {
 // 	return s.FirstName + s.LastName
 	
 // }
+
+
+// interface
+
+type Speaker interface {
+	Speak() string
+}
+
+type Dog struct{
+	Name string
+}
+
+func (d Dog) Speak() string{
+	return  "Woof!"
+}
+
+type Person struct{
+	Name string
+}
+
+func (p Person) Speak() string{
+	return  "Hello"
+}
+
+func MakeSound(s Speaker){
+	fmt.Println(s.Speak())
+	// return s.Speak()
+}
