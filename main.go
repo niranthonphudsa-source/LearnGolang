@@ -45,10 +45,10 @@ func main() {
 
 
 	//interface
-	dog := niran.Dog{Name: "Buddy"}
+	// dog := niran.Dog{Name: "Buddy"}
 	perSon := niran.Person{Name: "Natthakan"}
 
-	niran.MakeSound(dog)
+	// niran.MakeSound(dog)
 	niran.MakeSound(perSon)
 	
 }

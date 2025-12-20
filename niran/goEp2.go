@@ -321,15 +321,17 @@ func DataStructureTest() {
 
 type Speaker interface {
 	Speak() string
+	Walk() string
 }
 
-type Dog struct{
-	Name string
-}
+// type Dog struct{
+// 	Name string
 
-func (d Dog) Speak() string{
-	return  "Woof!"
-}
+// }
+
+// func (d Dog) Speak() string{
+// 	return  "Woof!"
+// }
 
 type Person struct{
 	Name string
@@ -339,7 +341,14 @@ func (p Person) Speak() string{
 	return  "Hello"
 }
 
+func (p Person) Walk() string{
+	return  "Walk"
+}
+
 func MakeSound(s Speaker){
+	fmt.Println(s)
 	fmt.Println(s.Speak())
+	fmt.Println(s.Walk())
+
 	// return s.Speak()
 }
