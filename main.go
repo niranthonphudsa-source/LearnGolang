@@ -3,13 +3,7 @@ package main
 // fmt สามารถใช้สำหรับปริ้นข้อความออกมาทางหน้าจอ
 
 import (
-	// "fmt"
-
-	// "github.com/google/uuid"
-	// "fmt"
-
 	"log"
-
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
 	"github.com/joho/godotenv"
