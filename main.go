@@ -55,12 +55,23 @@ func main() {
 		return c.SendString("Hello World!")
 	})
 
-	books := niran.BooksData()
-
-	app.Get("/books", func(c *fiber.Ctx) error {
-		return c.JSON(books)
-	})
-
+	// books1 := niran.Books{
+	// 	ID: 1,
+	// 	Title: "2003",
+	// 	Author: "Niran",
+	// }
+	// niran.AddBook(books1)
+	// books2 := niran.Books{
+	// 	ID: 2,
+	// 	Title: "2003",
+	// 	Author: "Niran TH",
+	// }
+	// niran.AddBook(books2)
+	app.Post("books", niran.AddBook)
+	app.Get("/books", niran.GetAllBooks)
+	app.Get("/books/:id", niran.GetBook)
+	app.Put("/books/:id", niran.UpdateBook)
+	app.Delete("/books/:id", niran.DeleteBook)
 	app.Listen(":8080")
 
 }

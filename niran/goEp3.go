@@ -1,8 +1,10 @@
 package niran
 
-import "fmt"
-
-// "fmt"
+import (
+	// "fmt"
+	"strconv"
+	"github.com/gofiber/fiber/v2"
+)
 
 type Books struct {
 	ID     int    `json:"id"`
@@ -12,8 +14,79 @@ type Books struct {
 
 var books []Books
 
-func BooksData() []Books {
-	books = append(books, Books{ID: 1, Title: "2003", Author: "Niran"})
-	fmt.Println(books)
-	return books
+// func AddBook(b Books) []Books {
+// 	// fmt.Println(books)
+// 	books = append(books, Books{ID: b.ID, Title: b.Title, Author: b.Author})
+// 	return books
+// }
+
+func GetAllBooks(c *fiber.Ctx) error {
+	return c.JSON(books)
+}
+
+func AddBook(c *fiber.Ctx) error {
+
+	book := new(Books)
+	if err := c.BodyParser(book); err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+	books = append(books, *book)
+	return c.JSON(books)
+}
+
+func GetBook(c *fiber.Ctx) error {
+	bookId, err := strconv.Atoi(c.Params("id"))
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+	for _, book := range books {
+		if book.ID == bookId {
+			return c.JSON(book)
+		}
+	}
+
+	return c.Status(fiber.StatusNotFound).SendString(" Not Found!!! ")
+}
+
+func UpdateBook(c *fiber.Ctx) error {
+	bookId, err := strconv.Atoi(c.Params("id"))
+	bookUpdate := new(Books)
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+
+	if err := c.BodyParser(bookUpdate); err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+
+	for i, book := range books {
+		if book.ID == bookId {
+			books[i].Title = bookUpdate.Title
+			books[i].Author = bookUpdate.Author
+			return c.JSON(books[i])
+		}
+	}
+
+	return c.Status(fiber.StatusNotFound).SendString("Update Book Not Found!!")
+}
+
+func DeleteBook(c *fiber.Ctx) error {
+
+	bookId, err := strconv.Atoi(c.Params("id"))
+
+	if err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+
+	for i, book := range books {
+		if book.ID == bookId {
+			// ... คือการกระจาย slice
+			// [1,2,3,4,5]
+			// [1, 2] + [4, 5]
+			books = append(books[:i], books[i+1:]...)
+			return c.Status(fiber.StatusNoContent).SendString("Delete Success!")
+		}
+
+	}
+	return c.Status(fiber.StatusNotFound).SendString("Delete Book Not Found!!")
 }
