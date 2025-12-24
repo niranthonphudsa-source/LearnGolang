@@ -12,9 +12,9 @@ import (
 )
 
 func main() {
-	id := uuid.New()
-	fmt.Println("Hello World")
-	fmt.Printf("UUID: %s\n", id)
+	// id := uuid.New()
+	// fmt.Println("Hello World")
+	// fmt.Printf("UUID: %s\n", id)
 
 	// How to use package niran
 	// niran.SayHelloNiran()
@@ -46,10 +46,10 @@ func main() {
 
 	//interface
 	// dog := niran.Dog{Name: "Buddy"}
-	perSon := niran.Person{Name: "Natthakan"}
+	// perSon := niran.Person{Name: "Natthakan"}
 
 	// niran.MakeSound(dog)
-	niran.MakeSound(perSon)
+	// niran.MakeSound(perSon)
 	
 }
 
