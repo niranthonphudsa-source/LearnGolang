@@ -105,217 +105,197 @@ func LoopTest() {
 		}
 	}
 
-
 	// while loop
 	k := 1
-	for k < 5{
+	for k < 5 {
 		fmt.Println(k)
 		k++
 	}
 
-
 }
 
-
 func DataStructureTest() {
-	array  var a [5]int
-	slice var a[]int
-	map 
-	struct
+	// array  var a [5]int
+	// slice var a[]int
+	// map
+	// struct
 
-	Array and Slice
+	//Array and Slice
 
-	var MyArray [5]int = [5]int{10, 20, 30, 40, 50}
-	fmt.Println(MyArray)
+	// var MyArray [5]int = [5]int{10, 20, 30, 40, 50}
+	// fmt.Println(MyArray)
 
-	for i := 0; i < len(MyArray); i++ {
-		fmt.Printf("Number %d: %d\n", i, MyArray[i])
-		MyArray[0] = 100
-	}
-	fmt.Println(MyArray[0])
+	// for i := 0; i < len(MyArray); i++ {
+	// 	fmt.Printf("Number %d: %d\n", i, MyArray[i])
+	// 	MyArray[0] = 100
+	// }
+	// fmt.Println(MyArray[0])
 
-	var mySlice []string = []string{"niran", "kritthapas", "sirawit"}
+	// var mySlice []string = []string{"niran", "kritthapas", "sirawit"}
 
-	for num := 0; num < len(mySlice); num++{
-		fmt.Printf("Name: %s\n", mySlice[num])
-	}
-	fmt.Println(len(mySlice))
-	fmt.Println(cap(mySlice))
+	// for num := 0; num < len(mySlice); num++{
+	// 	fmt.Printf("Name: %s\n", mySlice[num])
+	// }
+	// fmt.Println(len(mySlice))
+	// fmt.Println(cap(mySlice))
 
-	fmt.Print("Success !\n")
-	subSlice := mySlice[0:2]
-	fmt.Println(subSlice)
-	fmt.Println(len(subSlice))
-	fmt.Println(cap(subSlice))
+	// fmt.Print("Success !\n")
+	// subSlice := mySlice[0:2]
+	// fmt.Println(subSlice)
+	// fmt.Println(len(subSlice))
+	// fmt.Println(cap(subSlice))
 
-	mySlice = append(mySlice, "Natthakan")
-	fmt.Println(mySlice)
+	// mySlice = append(mySlice, "Natthakan")
+	// fmt.Println(mySlice)
 
-	//Convert Array to Slice 
-	myArray := [4]string{"niran", "kritthapas", "sirawit", "Natthakan"}
+	// //Convert Array to Slice
+	// myArray := [4]string{"niran", "kritthapas", "sirawit", "Natthakan"}
 
-	arrToSlice := myArray[:]
-	
-	arrToSlice = append(arrToSlice, "Teekhayu")
-	fmt.Println(arrToSlice)
+	// arrToSlice := myArray[:]
 
-
+	// arrToSlice = append(arrToSlice, "Teekhayu")
+	// fmt.Println(arrToSlice)
 
 	// Map
-	1 key have 1 value
-	<name> := make(map[type key]type value)
-	myMap := make(map[string]int)
-	myMap["Niran"] = 22
-	myMap["Natthakan"] = 23
-	myMap["Krittapas"] = 23
+	// 1 key have 1 value
+	// <name> := make(map[type key]type value)
+	// myMap := make(map[string]int)
+	// myMap["Niran"] = 22
+	// myMap["Natthakan"] = 23
+	// myMap["Krittapas"] = 23
 
-	fmt.Println(myMap)
-	fmt.Println("Niran age", myMap["Niran"])
-	fmt.Println("Natthakan age", myMap["Natthakan"])
+	// fmt.Println(myMap)
+	// fmt.Println("Niran age", myMap["Niran"])
+	// fmt.Println("Natthakan age", myMap["Natthakan"])
 
+	// // delete
+	// delete(myMap, "Krittapas")
+	// for key, value :=  range myMap {
+	// 	fmt.Printf("Name: %s Age: %d\n", key, value)
+	// }
 
-	// delete
-	delete(myMap, "Krittapas")
-	for key, value :=  range myMap {
-		fmt.Printf("Name: %s Age: %d\n", key, value)
-	}
+	// // check if key exit
+	// val, ok := myMap["Krittapas"]
+	// if ok {
+	// 	fmt.Println("Pear value:", val)
+	// } else {
+	// 	fmt.Println("Not Found")
+	// }
 
-	// check if key exit
-	val, ok := myMap["Krittapas"]
-	if ok {
-		fmt.Println("Pear value:", val)
-	} else {
-		fmt.Println("Not Found")
-	}
+	// type Dog interface {
+	// 	Bark() string
+	// }
 
-	
-
-
-	
-
-
-
-	type Dog interface {
-		Bark() string
-	}
-
-	Pointer
-	var a *int
+	// Pointer
+	// var a *int
 }
 
 // Struct
-type Person struct {
-	Name string
-	Age int 
-	Weight float32
-	Height float32
-	Address Address
-}
+// type Person struct {
+// 	Name string
+// 	Age int
+// 	Weight float32
+// 	Height float32
+// 	Address Address
+// }
 
-func TestStruct(){
+// func TestStruct(){
 
-	var Person1 Person
-	Person1.Name = "Niran"
-	Person1.Age = 22
-	Person1.Weight = 70.5
-	Person1.Height = 175.5
-	fmt.Printf("Data is Person1: %+v\n", Person1)
+// 	var Person1 Person
+// 	Person1.Name = "Niran"
+// 	Person1.Age = 22
+// 	Person1.Weight = 70.5
+// 	Person1.Height = 175.5
+// 	fmt.Printf("Data is Person1: %+v\n", Person1)
 
-	var person  []Person
-	person = append(person, Person{
-		Name: "Niran", 
-		Age: 22, 
-		Weight: 70.5,
-		Height: 175.5,
-	})
-	person = append(person, Person{
-		Name: "Natthakan", 
-		Age: 23, 
-		Weight: 71.5, 
-		Height: 115.5,
-	})
+// 	var person  []Person
+// 	person = append(person, Person{
+// 		Name: "Niran",
+// 		Age: 22,
+// 		Weight: 70.5,
+// 		Height: 175.5,
+// 	})
+// 	person = append(person, Person{
+// 		Name: "Natthakan",
+// 		Age: 23,
+// 		Weight: 71.5,
+// 		Height: 115.5,
+// 	})
 
+// 	fmt.Printf("Data is Person: %+v\n", person)
+// 	fmt.Printf("Name: %s\n", person[0].Name)
 
-	fmt.Printf("Data is Person: %+v\n", person)
-	fmt.Printf("Name: %s\n", person[0].Name)
+// 	for i := 0; i < len(person); i++ {
+// 		fmt.Printf("Person: %+v\n", person[i])
+// 	}
 
+// 	for j := 0; j < len(person); j++{
+// 		fmt.Println("Name: ", person[j].Name)
+// 		fmt.Println("Age: ", person[j].Age)
+// 		fmt.Println("Weight: ", person[j].Weight)
+// 		fmt.Println("Height: ", person[j].Height)
+// 	}
 
-	for i := 0; i < len(person); i++ {
-		fmt.Printf("Person: %+v\n", person[i])
-	}
-
-	for j := 0; j < len(person); j++{
-		fmt.Println("Name: ", person[j].Name)
-		fmt.Println("Age: ", person[j].Age)
-		fmt.Println("Weight: ", person[j].Weight)
-		fmt.Println("Height: ", person[j].Height)
-	}
-
-
-}
-
+// }
 
 // Struct in Struct
-type Address struct {
-	street string
-	city string
-	country string
-}
-func TestStructinStruct(){
-	var person  []Person
-	person = append(person, Person{
-		Name: "Niran", 
-		Age: 22, 
-		Weight: 70.5,
-		Height: 175.5,
-		Address: Address{
-			street: "333 Mian St",
-			city: "Bankok",
-			country: "Thailand",
-		},
-	})
+// type Address struct {
+// 	street string
+// 	city string
+// 	country string
+// }
+// func TestStructinStruct(){
+// 	var person  []Person
+// 	person = append(person, Person{
+// 		Name: "Niran",
+// 		Age: 22,
+// 		Weight: 70.5,
+// 		Height: 175.5,
+// 		Address: Address{
+// 			street: "333 Mian St",
+// 			city: "Bankok",
+// 			country: "Thailand",
+// 		},
+// 	})
 
-	for j := 0; j < len(person); j++{
-		fmt.Println("Name: ", person[j].Name)
-		fmt.Println("Age: ", person[j].Age)
-		fmt.Println("Weight: ", person[j].Weight)
-		fmt.Println("Height: ", person[j].Height)
-		fmt.Println("Address: ", person[j].Address.street, 
-						person[j].Address.city, 
-						person[j].Address.country)
-	}
-}
+// 	for j := 0; j < len(person); j++{
+// 		fmt.Println("Name: ", person[j].Name)
+// 		fmt.Println("Age: ", person[j].Age)
+// 		fmt.Println("Weight: ", person[j].Weight)
+// 		fmt.Println("Height: ", person[j].Height)
+// 		fmt.Println("Address: ", person[j].Address.street,
+// 						person[j].Address.city,
+// 						person[j].Address.country)
+// 	}
+// }
 
+// func MyMessage(name string, num int) {
+// 	fmt.Println("I just executed!")
+// 	for i := 0; i <= num; i++{
+// 		fmt.Printf("My name is %s\n", name)
+// 	}
 
-func MyMessage(name string, num int) {
-	fmt.Println("I just executed!")
-	for i := 0; i <= num; i++{
-		fmt.Printf("My name is %s\n", name)
-	}
+// }
 
-}
-
-func Add(a int, b int) int {
-	return a + b
-}
-
+// func Add(a int, b int) int {
+// 	return a + b
+// }
 
 //method
 /* Defind the student struct*/
-type Student struct {
-	FirstName string
-	LastName string
-	
-}
+// type Student struct {
+// 	FirstName string
+// 	LastName string
+
+// }
 
 // Method with a receiver of type Student
 // This method returns the full name of student
 
-func (s Student) FulllName() string{
-	return s.FirstName + s.LastName
-	
-}
+// func (s Student) FulllName() string{
+// 	return s.FirstName + s.LastName
 
+// }
 
 // interface
 
@@ -324,28 +304,28 @@ type Speaker interface {
 	Walk() string
 }
 
-type Dog struct{
+// type Dog struct{
+// 	Name string
+
+// }
+
+// func (d Dog) Speak() string{
+// 	return  "Woof!"
+// }
+
+type Person struct {
 	Name string
-
 }
 
-func (d Dog) Speak() string{
-	return  "Woof!"
+func (p Person) Speak() string {
+	return "Hello"
 }
 
-type Person struct{
-	Name string
+func (p Person) Walk() string {
+	return "Walk"
 }
 
-func (p Person) Speak() string{
-	return  "Hello"
-}
-
-func (p Person) Walk() string{
-	return  "Walk"
-}
-
-func MakeSound(s Speaker){
+func MakeSound(s Speaker) {
 	fmt.Println(s)
 	fmt.Println(s.Speak())
 	fmt.Println(s.Walk())
