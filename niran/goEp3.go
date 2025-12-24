@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/golang-jwt/jwt/v5"
 )
 
 type Books struct {
@@ -142,6 +143,7 @@ var memberUser = Users{
 	Password: "password1234",
 }
 
+
 func LogIn(c *fiber.Ctx) error {
 	user := new(Users)
 	if err := c.BodyParser(user); err != nil {
@@ -151,9 +153,26 @@ func LogIn(c *fiber.Ctx) error {
 	if user.Email != memberUser.Email || user.Password != memberUser.Password {
 		return fiber.ErrUnauthorized
 	}
+
+	// create token
+	token := jwt.New(jwt.SigningMethodHS256)
+
+	// set clamis
+	clamis := token.Claims.(jwt.MapClaims)
+	clamis["name"] = "Niran TH"
+	clamis["admin"] = true
+	clamis["exp"] = time.Now().Add(time.Hour * 72).Unix()
+
+	// Generate encode token and send it as respons
+	t, err := token.SignedString([]byte(os.Getenv("SECRET")))
+	if err != nil{
+		return c.SendStatus(fiber.StatusInternalServerError)
+	}
 	return c.JSON(fiber.Map{
 		"message": "Login Success",
+		"token": t,
 	})
+
 }
 
 func CheckMiddleware(c *fiber.Ctx) error {

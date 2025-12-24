@@ -4,7 +4,10 @@ package main
 
 import (
 	"log"
+	"os"
+
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/jwt/v2"
 	"github.com/gofiber/template/html/v2"
 	"github.com/joho/godotenv"
 	"github.com/niran/go-example/niran"
@@ -27,8 +30,13 @@ func main() {
 	})
 
 	app.Post("/login", niran.LogIn)
-	
+
 	app.Use(niran.CheckMiddleware)
+
+	app.Use(jwtware.New(jwtware.Config{
+		SigningKey: []byte(os.Getenv("SECRET")),
+	}))
+
 	app.Get("/testHtml", niran.TestHtml)
 	app.Post("books", niran.AddBook)
 	app.Get("/books", niran.GetAllBooks)
@@ -37,7 +45,7 @@ func main() {
 	app.Delete("/books/:id", niran.DeleteBook)
 	app.Post("/upload", niran.UploadFile)
 	app.Get("/config", niran.GetEnv)
-	
+
 	app.Listen(":8080")
 
 }
