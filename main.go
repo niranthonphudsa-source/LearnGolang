@@ -55,7 +55,7 @@ func main() {
 		return c.SendString("Hello World!")
 	})
 
-	books := niran.CreateBooks()
+	books := niran.BooksData()
 
 	app.Get("/books", func(c *fiber.Ctx) error {
 		return c.JSON(books)

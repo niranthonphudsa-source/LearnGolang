@@ -12,7 +12,7 @@ type Books struct {
 
 var books []Books
 
-func CreateBooks() []Books{
+func BooksData() []Books {
 	books = append(books, Books{ID: 1, Title: "2003", Author: "Niran"})
 	fmt.Println(books)
 	return books
