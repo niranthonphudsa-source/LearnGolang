@@ -132,37 +132,34 @@ func GetEnv(c *fiber.Ctx) error {
 	})
 }
 
+type Users struct {
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
 
-// type Users struct {
-// 	Email string `json:email`
-// 	Password string `json:password`
-// }
+var memberUser = Users{
+	Email:    "user@xample.com",
+	Password: "password1234",
+}
 
-// var memberUser = Users{
-// 	Email: "user@xample.com",
-// 	Password: "password1234"
-// }
+func LogIn(c *fiber.Ctx) error {
+	user := new(Users)
+	if err := c.BodyParser(user); err != nil {
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
 
-// func LogIn(c *fiber.Ctx) error {
-// 	user := new(Users)
-// 	if err := c.BodyParser(user) ; err != nil{
-// 		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
-// 	}
-// 	if user.Email == memberUser.Email && user.Password == memberUser.Password{
-// 		return c.JSON(fiber.Map{
-// 			"message": "Login Success",
-// 		})
-// 	}	
-
-// 	if user.Email != memberUser.Email || user.Password != Email{
-// 		return fiber.ErrUnauthorized
-// 	}
-// }
+	if user.Email != memberUser.Email || user.Password != memberUser.Password {
+		return fiber.ErrUnauthorized
+	}
+	return c.JSON(fiber.Map{
+		"message": "Login Success",
+	})
+}
 
 func CheckMiddleware(c *fiber.Ctx) error {
 	start := time.Now()
 
-	fmt.Printf("URL = %s, Method = %s, Time = %s\n",c.OriginalURL(), c.Method(), start)
+	fmt.Printf("URL = %s, Method = %s, Time = %s\n", c.OriginalURL(), c.Method(), start)
 
 	return c.Next()
 }
