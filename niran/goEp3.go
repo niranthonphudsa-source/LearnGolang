@@ -2,6 +2,7 @@ package niran
 
 import (
 	// "fmt"
+	"os"
 	"strconv"
 
 	"github.com/gofiber/fiber/v2"
@@ -113,5 +114,18 @@ func TestHtml(c *fiber.Ctx) error {
 	return c.Render("index", fiber.Map{
 		"Title": "Hello World!",
 		"Name":  "Niran",
+	})
+}
+
+func GetEnv(c *fiber.Ctx) error {
+
+	// if value, exits := os.LookupEnv("SECRET"); exits {
+	// 	return c.JSON(fiber.Map{
+	// 		"SECRET": value,
+	// 	})
+	// }
+
+	return c.JSON(fiber.Map{
+		"SECRET": os.Getenv("SECRET"),
 	})
 }

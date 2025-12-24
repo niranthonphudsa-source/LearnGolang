@@ -8,8 +8,11 @@ import (
 	// "github.com/google/uuid"
 	// "fmt"
 
+	"log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
+	"github.com/joho/godotenv"
 	"github.com/niran/go-example/niran"
 )
 
@@ -50,6 +53,11 @@ func main() {
 
 	// niran.MakeSound(dog)
 	// niran.MakeSound(perSon)
+
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Load Env Error")
+	}
+	
 	engine := html.New("./views", ".html")
 	app := fiber.New(
 		fiber.Config{
@@ -81,6 +89,8 @@ func main() {
 	app.Delete("/books/:id", niran.DeleteBook)
 
 	app.Post("/upload", niran.UploadFile)
+
+	app.Get("/config", niran.GetEnv)
 	app.Listen(":8080")
 
 }
