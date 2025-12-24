@@ -31,11 +31,13 @@ func main() {
 
 	app.Post("/login", niran.LogIn)
 
-	app.Use(niran.CheckMiddleware)
+	
 
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey: []byte(os.Getenv("SECRET")),
 	}))
+
+	app.Use(niran.CheckMiddleware)
 
 	app.Get("/testHtml", niran.TestHtml)
 	app.Post("books", niran.AddBook)

@@ -160,7 +160,7 @@ func LogIn(c *fiber.Ctx) error {
 	// set clamis
 	clamis := token.Claims.(jwt.MapClaims)
 	clamis["name"] = "Niran TH"
-	clamis["admin"] = true
+	clamis["role"] = "admin"
 	clamis["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
 	// Generate encode token and send it as respons
@@ -176,9 +176,13 @@ func LogIn(c *fiber.Ctx) error {
 }
 
 func CheckMiddleware(c *fiber.Ctx) error {
-	start := time.Now()
+	user := c.Locals("user").(*jwt.Token)
+	claims := user.Claims.(jwt.MapClaims)
 
-	fmt.Printf("URL = %s, Method = %s, Time = %s\n", c.OriginalURL(), c.Method(), start)
+	fmt.Println(claims)
+	if claims["role"] != "admin"{
+		return fiber.ErrUnauthorized
+	}
 
 	return c.Next()
 }
