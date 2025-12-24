@@ -3,6 +3,7 @@ package niran
 import (
 	// "fmt"
 	"strconv"
+
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -94,16 +95,23 @@ func DeleteBook(c *fiber.Ctx) error {
 func UploadFile(c *fiber.Ctx) error {
 	file, err := c.FormFile("image")
 
-	if err != nil{
+	if err != nil {
 		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
 	}
 
-	err = c.SaveFile(file, "./upload/" + file.Filename)
+	err = c.SaveFile(file, "./upload/"+file.Filename)
 
-	if err != nil{
+	if err != nil {
 		return c.Status(fiber.StatusInternalServerError).SendString(err.Error())
 	}
-	
+
 	return c.SendString("File Upload Success!")
-	
+
+}
+
+func TestHtml(c *fiber.Ctx) error {
+	return c.Render("index", fiber.Map{
+		"Title": "Hello World!",
+		"Name":  "Niran",
+	})
 }

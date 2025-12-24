@@ -9,6 +9,7 @@ import (
 	// "fmt"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/template/html/v2"
 	"github.com/niran/go-example/niran"
 )
 
@@ -49,11 +50,17 @@ func main() {
 
 	// niran.MakeSound(dog)
 	// niran.MakeSound(perSon)
-	app := fiber.New()
+	engine := html.New("./views", ".html")
+	app := fiber.New(
+		fiber.Config{
+			Views: engine,
+		})
 
 	app.Get("/hello", func(c *fiber.Ctx) error {
 		return c.SendString("Hello World!")
 	})
+
+	app.Get("/testHtml", niran.TestHtml)
 
 	// books1 := niran.Books{
 	// 	ID: 1,
