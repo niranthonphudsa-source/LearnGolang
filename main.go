@@ -55,16 +55,10 @@ func main() {
 		return c.SendString("Hello World!")
 	})
 
-	books := niran.Books{
-		ID:     1,
-		Title:  "2003",
-		Author: "Niran",
-	}
-	result := niran.CreateBook(books)
-	// fmt.Println(result)
+	books := niran.CreateBooks()
 
 	app.Get("/books", func(c *fiber.Ctx) error {
-		return c.JSON(result)
+		return c.JSON(books)
 	})
 
 	app.Listen(":8080")
