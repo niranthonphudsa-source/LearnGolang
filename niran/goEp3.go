@@ -2,8 +2,10 @@ package niran
 
 import (
 	// "fmt"
+	"fmt"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -128,4 +130,39 @@ func GetEnv(c *fiber.Ctx) error {
 	return c.JSON(fiber.Map{
 		"SECRET": os.Getenv("SECRET"),
 	})
+}
+
+
+// type Users struct {
+// 	Email string `json:email`
+// 	Password string `json:password`
+// }
+
+// var memberUser = Users{
+// 	Email: "user@xample.com",
+// 	Password: "password1234"
+// }
+
+// func LogIn(c *fiber.Ctx) error {
+// 	user := new(Users)
+// 	if err := c.BodyParser(user) ; err != nil{
+// 		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+// 	}
+// 	if user.Email == memberUser.Email && user.Password == memberUser.Password{
+// 		return c.JSON(fiber.Map{
+// 			"message": "Login Success",
+// 		})
+// 	}	
+
+// 	if user.Email != memberUser.Email || user.Password != Email{
+// 		return fiber.ErrUnauthorized
+// 	}
+// }
+
+func CheckMiddleware(c *fiber.Ctx) error {
+	start := time.Now()
+
+	fmt.Printf("URL = %s, Method = %s, Time = %s\n",c.OriginalURL(), c.Method(), start)
+
+	return c.Next()
 }

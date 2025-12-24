@@ -26,16 +26,17 @@ func main() {
 		return c.SendString("Hello World!")
 	})
 
+	app.Use(niran.CheckMiddleware)
 	app.Get("/testHtml", niran.TestHtml)
 	app.Post("books", niran.AddBook)
 	app.Get("/books", niran.GetAllBooks)
 	app.Get("/books/:id", niran.GetBook)
 	app.Put("/books/:id", niran.UpdateBook)
 	app.Delete("/books/:id", niran.DeleteBook)
-
 	app.Post("/upload", niran.UploadFile)
-
 	app.Get("/config", niran.GetEnv)
+	// app.Post("login", niran.LogIn)
+	
 	app.Listen(":8080")
 
 }
