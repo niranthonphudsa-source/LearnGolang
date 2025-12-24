@@ -72,6 +72,8 @@ func main() {
 	app.Get("/books/:id", niran.GetBook)
 	app.Put("/books/:id", niran.UpdateBook)
 	app.Delete("/books/:id", niran.DeleteBook)
+
+	app.Post("/upload", niran.UploadFile)
 	app.Listen(":8080")
 
 }

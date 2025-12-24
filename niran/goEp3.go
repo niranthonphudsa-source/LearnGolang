@@ -90,3 +90,20 @@ func DeleteBook(c *fiber.Ctx) error {
 	}
 	return c.Status(fiber.StatusNotFound).SendString("Delete Book Not Found!!")
 }
+
+func UploadFile(c *fiber.Ctx) error {
+	file, err := c.FormFile("image")
+
+	if err != nil{
+		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
+	}
+
+	err = c.SaveFile(file, "./upload/" + file.Filename)
+
+	if err != nil{
+		return c.Status(fiber.StatusInternalServerError).SendString(err.Error())
+	}
+	
+	return c.SendString("File Upload Success!")
+	
+}
