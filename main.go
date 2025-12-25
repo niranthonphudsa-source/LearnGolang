@@ -12,21 +12,20 @@ import (
 	"github.com/gofiber/template/html/v2"
 	"github.com/joho/godotenv"
 	_ "github.com/niran/go-example/docs"
-	"github.com/niran/go-example/niran"
 
+	"github.com/niran/go-example/niran"
 	"github.com/gofiber/jwt/v2"
 )
 
-// Handler functions
-// getBooks godoc
-// @Summary Get all books
-// @Description Get details of all books
-// @Tags books
-// @Accept  json
-// @Produce  json
-// @Security ApiKeyAuth
-// @Success 200 {array} Books
-// @Router /books [get]
+// @title Book API
+// @description This is a sample server for a book API.
+// @version 1.0
+// @host localhost:8080
+// @BasePath /
+// @schemes http
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 
 	if err := godotenv.Load(); err != nil {
@@ -40,6 +39,8 @@ func main() {
 		})
 
 	app.Get("/swagger/*", swagger.HandlerDefault) //default
+
+	
 	app.Get("/hello", func(c *fiber.Ctx) error {
 		return c.SendString("Hello World!")
 	})
