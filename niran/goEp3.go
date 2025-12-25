@@ -159,7 +159,7 @@ func LogIn(c *fiber.Ctx) error {
 
 	// set clamis
 	clamis := token.Claims.(jwt.MapClaims)
-	clamis["name"] = "Niran TH"
+	clamis["email"] = user.Email
 	clamis["role"] = "admin"
 	clamis["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
