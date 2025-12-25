@@ -8,7 +8,8 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/golang-jwt/jwt/v5"
+	
+	"github.com/golang-jwt/jwt/v4"
 )
 
 type Books struct {
@@ -19,18 +20,24 @@ type Books struct {
 
 var books []Books
 
-// func AddBook(b Books) []Books {
-// 	// fmt.Println(books)
-// 	books = append(books, Books{ID: b.ID, Title: b.Title, Author: b.Author})
-// 	return books
-// }
+// Handler functions
+// getBooks godoc
+// @Summary Get all books
+// @Description Get details of all books
+// @Tags books
+// @Accept  json
+// @Produce  json
+// @Security ApiKeyAuth
+// @Success 200 {array} Books
+// @Router /books [get]
 
 func GetAllBooks(c *fiber.Ctx) error {
+	books = append(books, Books{ID: 1, Title: "2003", Author: "Niran"})
+	books = append(books, Books{ID: 2, Title: "2005", Author: "Niran TH"})
 	return c.JSON(books)
 }
 
 func AddBook(c *fiber.Ctx) error {
-
 	book := new(Books)
 	if err := c.BodyParser(book); err != nil {
 		return c.Status(fiber.StatusBadRequest).SendString(err.Error())
@@ -143,7 +150,6 @@ var memberUser = Users{
 	Password: "password1234",
 }
 
-
 func LogIn(c *fiber.Ctx) error {
 	user := new(Users)
 	if err := c.BodyParser(user); err != nil {
@@ -158,19 +164,21 @@ func LogIn(c *fiber.Ctx) error {
 	token := jwt.New(jwt.SigningMethodHS256)
 
 	// set clamis
-	clamis := token.Claims.(jwt.MapClaims)
-	clamis["email"] = user.Email
-	clamis["role"] = "admin"
-	clamis["exp"] = time.Now().Add(time.Hour * 72).Unix()
+	claims := token.Claims.(jwt.MapClaims)
+	claims["email"] = user.Email
+	claims["role"] = "admin"
+	claims["exp"] = time.Now().Add(time.Hour * 72).Unix()
 
 	// Generate encode token and send it as respons
-	t, err := token.SignedString([]byte(os.Getenv("SECRET")))
-	if err != nil{
+	t, err := token.SignedString([]byte(os.Getenv("JWT_SECRET")))
+
+	if err != nil {
 		return c.SendStatus(fiber.StatusInternalServerError)
 	}
+
 	return c.JSON(fiber.Map{
 		"message": "Login Success",
-		"token": t,
+		"token":   t,
 	})
 
 }
@@ -178,11 +186,13 @@ func LogIn(c *fiber.Ctx) error {
 func CheckMiddleware(c *fiber.Ctx) error {
 	user := c.Locals("user").(*jwt.Token)
 	claims := user.Claims.(jwt.MapClaims)
-
+	
 	fmt.Println(claims)
-	if claims["role"] != "admin"{
+	if claims["role"] != "admin" {
 		return fiber.ErrUnauthorized
 	}
+	// start := time.Now()
+	// fmt.Printf("URL = %s Method = %s Time = %s\n", c.OriginalURL(), c.Method(), start)
 
 	return c.Next()
 }
